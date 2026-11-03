@@ -1,0 +1,70 @@
+[
+  {
+    "feature": "VFA_mg_L",
+    "importance": 0.1786
+  },
+  {
+    "feature": "TAN_mg_L",
+    "importance": 0.1764
+  },
+  {
+    "feature": "pH",
+    "importance": 0.1342
+  },
+  {
+    "feature": "HRT_days",
+    "importance": 0.0986
+  },
+  {
+    "feature": "Temperature_C",
+    "importance": 0.0697
+  },
+  {
+    "feature": "Reactor_Type_CSTR",
+    "importance": 0.0627
+  },
+  {
+    "feature": "OLR_gVS_L_day",
+    "importance": 0.0597
+  },
+  {
+    "feature": "Substrate_Category_Protein-Rich",
+    "importance": 0.034
+  },
+  {
+    "feature": "Substrate_Category_Food Waste",
+    "importance": 0.0326
+  },
+  {
+    "feature": "Substrate_Category_Industrial organic waste",
+    "importance": 0.0312
+  },
+  {
+    "feature": "Substrate_Category_Co-Digestion",
+    "importance": 0.0267
+  },
+  {
+    "feature": "Reactor_Type_Batch",
+    "importance": 0.0211
+  },
+  {
+    "feature": "Substrate_Category_Manure/Sludge",
+    "importance": 0.0199
+  },
+  {
+    "feature": "Substrate_Category_Agricultural residue",
+    "importance": 0.0169
+  },
+  {
+    "feature": "Substrate_Category_Lipid-Rich",
+    "importance": 0.0135
+  },
+  {
+    "feature": "ISR",
+    "importance": 0.0131
+  },
+  {
+    "feature": "Reactor_Type_Thermophilic_Batch",
+    "importance": 0.0111
+  }
+]

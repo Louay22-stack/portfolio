@@ -1,0 +1,37 @@
+[
+  {
+    "protein_source": "Beef",
+    "water_use_L_per_kg_protein": 15000,
+    "land_use_m2_per_kg_protein": 250,
+    "ghg_emissions_kg_co2eq_per_kg": 50,
+    "energy_use_kwh_per_kg": 60
+  },
+  {
+    "protein_source": "Chicken",
+    "water_use_L_per_kg_protein": 4000,
+    "land_use_m2_per_kg_protein": 45,
+    "ghg_emissions_kg_co2eq_per_kg": 8,
+    "energy_use_kwh_per_kg": 25
+  },
+  {
+    "protein_source": "Pork",
+    "water_use_L_per_kg_protein": 6000,
+    "land_use_m2_per_kg_protein": 55,
+    "ghg_emissions_kg_co2eq_per_kg": 13,
+    "energy_use_kwh_per_kg": 33
+  },
+  {
+    "protein_source": "Soy",
+    "water_use_L_per_kg_protein": 2500,
+    "land_use_m2_per_kg_protein": 15,
+    "ghg_emissions_kg_co2eq_per_kg": 2.5,
+    "energy_use_kwh_per_kg": 0.7
+  },
+  {
+    "protein_source": "Pea",
+    "water_use_L_per_kg_protein": 1500,
+    "land_use_m2_per_kg_protein": 8,
+    "ghg_emissions_kg_co2eq_per_kg": 1.5,
+    "energy_use_kwh_per_kg": 3.5
+  }
+]

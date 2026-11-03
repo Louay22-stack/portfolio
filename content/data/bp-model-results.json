@@ -1,0 +1,110 @@
+[
+  {
+    "Target": "Protein Productivity (g/L/h)",
+    "Model": "Linear Regression",
+    "LOO R²": 0.801,
+    "LOO MAE": 0.1435,
+    "LOO RMSE": 0.148,
+    "5-Fold R²": 0.942,
+    "5-Fold ±": 0.021
+  },
+  {
+    "Target": "Protein Productivity (g/L/h)",
+    "Model": "Ridge",
+    "LOO R²": 0.757,
+    "LOO MAE": 0.1494,
+    "LOO RMSE": 0.1634,
+    "5-Fold R²": 0.946,
+    "5-Fold ±": 0.019
+  },
+  {
+    "Target": "Protein Productivity (g/L/h)",
+    "Model": "Lasso",
+    "LOO R²": 0.293,
+    "LOO MAE": 0.2379,
+    "LOO RMSE": 0.2786,
+    "5-Fold R²": 0.939,
+    "5-Fold ±": 0.021
+  },
+  {
+    "Target": "Protein Productivity (g/L/h)",
+    "Model": "Random Forest",
+    "LOO R²": -0.026,
+    "LOO MAE": 0.2843,
+    "LOO RMSE": 0.3356,
+    "5-Fold R²": 0.976,
+    "5-Fold ±": 0.005
+  },
+  {
+    "Target": "Total OPEX ($/kg)",
+    "Model": "Linear Regression",
+    "LOO R²": -0.404,
+    "LOO MAE": 0.3478,
+    "LOO RMSE": 0.3833,
+    "5-Fold R²": 0.82,
+    "5-Fold ±": 0.072
+  },
+  {
+    "Target": "Total OPEX ($/kg)",
+    "Model": "Ridge",
+    "LOO R²": 0.085,
+    "LOO MAE": 0.269,
+    "LOO RMSE": 0.3094,
+    "5-Fold R²": 0.826,
+    "5-Fold ±": 0.071
+  },
+  {
+    "Target": "Total OPEX ($/kg)",
+    "Model": "Lasso",
+    "LOO R²": -0.846,
+    "LOO MAE": 0.4277,
+    "LOO RMSE": 0.4394,
+    "5-Fold R²": 0.829,
+    "5-Fold ±": 0.04
+  },
+  {
+    "Target": "Total OPEX ($/kg)",
+    "Model": "Random Forest",
+    "LOO R²": -0.11,
+    "LOO MAE": 0.3008,
+    "LOO RMSE": 0.3408,
+    "5-Fold R²": 0.832,
+    "5-Fold ±": 0.063
+  },
+  {
+    "Target": "GHG Emissions (kg CO₂eq/kg)",
+    "Model": "Linear Regression",
+    "LOO R²": -0.484,
+    "LOO MAE": 0.1313,
+    "LOO RMSE": 0.1432,
+    "5-Fold R²": 0.732,
+    "5-Fold ±": 0.102
+  },
+  {
+    "Target": "GHG Emissions (kg CO₂eq/kg)",
+    "Model": "Ridge",
+    "LOO R²": 0.063,
+    "LOO MAE": 0.1003,
+    "LOO RMSE": 0.1138,
+    "5-Fold R²": 0.758,
+    "5-Fold ±": 0.077
+  },
+  {
+    "Target": "GHG Emissions (kg CO₂eq/kg)",
+    "Model": "Lasso",
+    "LOO R²": -0.767,
+    "LOO MAE": 0.1483,
+    "LOO RMSE": 0.1563,
+    "5-Fold R²": 0.754,
+    "5-Fold ±": 0.04
+  },
+  {
+    "Target": "GHG Emissions (kg CO₂eq/kg)",
+    "Model": "Random Forest",
+    "LOO R²": -0.174,
+    "LOO MAE": 0.113,
+    "LOO RMSE": 0.1274,
+    "5-Fold R²": 0.805,
+    "5-Fold ±": 0.067
+  }
+]

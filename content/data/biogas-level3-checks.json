@@ -1,0 +1,74 @@
+[
+  {
+    "item": "S6 mixed gas total flow",
+    "stream": "S6 Mixed gas",
+    "unit": "kmol/h",
+    "dwsim": 32.52,
+    "hand": 32.521,
+    "deviation": "0.0%"
+  },
+  {
+    "item": "S7 hot flue gas total flow",
+    "stream": "S7 Hot flue gas",
+    "unit": "kmol/h",
+    "dwsim": 32.52,
+    "hand": 32.521,
+    "deviation": "0.0%"
+  },
+  {
+    "item": "CH4 in S7",
+    "stream": "S7 Hot flue gas",
+    "unit": "kmol/h",
+    "dwsim": 0.0258,
+    "hand": 0.0259,
+    "deviation": "-0.3%"
+  },
+  {
+    "item": "O2 in S7",
+    "stream": "S7 Hot flue gas",
+    "unit": "kmol/h",
+    "dwsim": 0.821,
+    "hand": 0.821,
+    "deviation": "0.0%"
+  },
+  {
+    "item": "CO2 in S7",
+    "stream": "S7 Hot flue gas",
+    "unit": "kmol/h",
+    "dwsim": 4.166,
+    "hand": 4.167,
+    "deviation": "0.0%"
+  },
+  {
+    "item": "H2O in S7",
+    "stream": "S7 Hot flue gas",
+    "unit": "kmol/h",
+    "dwsim": 5.15,
+    "hand": 5.15,
+    "deviation": "0.0%"
+  },
+  {
+    "item": "N2 in S7",
+    "stream": "S7 Hot flue gas",
+    "unit": "kmol/h",
+    "dwsim": 22.357,
+    "hand": 22.357,
+    "deviation": "0.0%"
+  },
+  {
+    "item": "S7 flow at the set temperature",
+    "stream": "S7 Hot flue gas",
+    "unit": "kmol/h",
+    "dwsim": 32.52,
+    "hand": 32.521,
+    "deviation": "0.0%"
+  },
+  {
+    "item": "S8 flow",
+    "stream": "S8 Cooled flue gas",
+    "unit": "kmol/h",
+    "dwsim": 32.52,
+    "hand": 32.521,
+    "deviation": "0.0%"
+  }
+]

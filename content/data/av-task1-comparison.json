@@ -1,0 +1,50 @@
+[
+  {
+    "model": "Tuned ANN / MLPRegressor",
+    "type": "Tuned",
+    "trainR2": 0.9924,
+    "testR2": 0.9092,
+    "testRMSE": 41.85,
+    "testMAE": 20.67
+  },
+  {
+    "model": "ANN / MLPRegressor",
+    "type": "Baseline",
+    "trainR2": 0.991,
+    "testR2": 0.9043,
+    "testRMSE": 42.97,
+    "testMAE": 21.46
+  },
+  {
+    "model": "XGBoost",
+    "type": "Baseline",
+    "trainR2": 0.997,
+    "testR2": 0.8979,
+    "testRMSE": 44.37,
+    "testMAE": 21.36
+  },
+  {
+    "model": "Tuned XGBoost",
+    "type": "Tuned",
+    "trainR2": 0.9983,
+    "testR2": 0.8971,
+    "testRMSE": 44.56,
+    "testMAE": 21.54
+  },
+  {
+    "model": "Random Forest",
+    "type": "Baseline",
+    "trainR2": 0.994,
+    "testR2": 0.8879,
+    "testRMSE": 46.51,
+    "testMAE": 20.72
+  },
+  {
+    "model": "SVR",
+    "type": "Baseline",
+    "trainR2": 0.9507,
+    "testR2": 0.8707,
+    "testRMSE": 49.94,
+    "testMAE": 30.95
+  }
+]

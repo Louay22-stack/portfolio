@@ -1,0 +1,56 @@
+[
+  {
+    "strain_id": "Strain_1",
+    "mu_max": 0.35,
+    "Yx_s": 0.538,
+    "protein_content_pct": 54.7,
+    "Ks": 0.027,
+    "m_s": 0.0546,
+    "Yx_o2": 0.74
+  },
+  {
+    "strain_id": "Strain_2",
+    "mu_max": 0.483,
+    "Yx_s": 0.54,
+    "protein_content_pct": 50.6,
+    "Ks": 0.291,
+    "m_s": 0.0533,
+    "Yx_o2": 0.58
+  },
+  {
+    "strain_id": "Strain_3",
+    "mu_max": 0.273,
+    "Yx_s": 0.564,
+    "protein_content_pct": 65.7,
+    "Ks": 0.135,
+    "m_s": 0.0316,
+    "Yx_o2": 0.74
+  },
+  {
+    "strain_id": "Strain_4",
+    "mu_max": 0.256,
+    "Yx_s": 0.56,
+    "protein_content_pct": 58.8,
+    "Ks": 0.116,
+    "m_s": 0.0382,
+    "Yx_o2": 0.81
+  },
+  {
+    "strain_id": "Strain_5",
+    "mu_max": 0.28,
+    "Yx_s": 0.6,
+    "protein_content_pct": 51.4,
+    "Ks": 0.186,
+    "m_s": 0.0268,
+    "Yx_o2": 0.53
+  },
+  {
+    "strain_id": "Strain_6",
+    "mu_max": 0.554,
+    "Yx_s": 0.467,
+    "protein_content_pct": 79,
+    "Ks": 0.098,
+    "m_s": 0.0239,
+    "Yx_o2": 0.67
+  }
+]

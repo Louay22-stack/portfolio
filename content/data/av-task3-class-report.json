@@ -1,0 +1,37 @@
+[
+  {
+    "label": "Ammonia",
+    "precision": 1,
+    "recall": 0.83,
+    "f1": 0.91,
+    "support": 70
+  },
+  {
+    "label": "LCFA",
+    "precision": 0.89,
+    "recall": 0.98,
+    "f1": 0.94,
+    "support": 60
+  },
+  {
+    "label": "Other inhibition",
+    "precision": 1,
+    "recall": 1,
+    "f1": 1,
+    "support": 16
+  },
+  {
+    "label": "Salinity",
+    "precision": 0.88,
+    "recall": 0.98,
+    "f1": 0.92,
+    "support": 50
+  },
+  {
+    "label": "VFA accumulation",
+    "precision": 0.92,
+    "recall": 0.92,
+    "f1": 0.92,
+    "support": 24
+  }
+]
