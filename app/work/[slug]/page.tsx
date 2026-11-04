@@ -101,8 +101,11 @@ export default async function CaseStudy({ params }: PageProps<"/work/[slug]">) {
 
       {/* Body */}
       <div className="container-site mt-24 grid grid-cols-1 gap-12 pb-32 md:mt-32 xl:grid-cols-12">
-        <aside className="hidden xl:col-span-3 xl:block">
-          <SectionNav sections={p.sections.map(({ id, title }) => ({ id, title }))} />
+        <aside className="contents xl:col-span-3 xl:block">
+          <SectionNav
+            sections={p.sections.map(({ id, title }) => ({ id, title }))}
+            next={{ href: `/work/${next.slug}`, title: next.shortTitle }}
+          />
         </aside>
         <div className="space-y-24 md:space-y-32 xl:col-span-9">
           {p.sections.map((s, i) => (
