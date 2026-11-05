@@ -170,7 +170,7 @@ export function ChatAssistant() {
   const fade = reduce ? { opacity: 0 } : { opacity: 0, y: 12 };
 
   return (
-    <div className="print:hidden">
+    <div className="print:hidden max-md:in-data-[menu-open]:hidden">
       {/* Greeting and launcher */}
       <div className={cn("fixed right-3 bottom-3 z-50 flex flex-col items-end gap-2 md:right-6 md:bottom-5", open && "hidden")}>
         <AnimatePresence>

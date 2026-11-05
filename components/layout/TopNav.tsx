@@ -34,6 +34,7 @@ export function TopNav() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    document.body.toggleAttribute("data-menu-open", open);
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -57,10 +58,18 @@ export function TopNav() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-40 transition-[background-color,border-color] duration-500 xl:left-[var(--rail)]",
-        scrolled ? "border-b border-line bg-bg/85 backdrop-blur-md" : "border-b border-transparent",
+        "fixed inset-x-0 top-0 z-40 transition-[border-color] duration-500 xl:left-[var(--rail)]",
+        scrolled ? "border-b border-line" : "border-b border-transparent",
       )}
     >
+      {/* The blur sits on its own layer: on the header it would trap the fixed mobile menu inside the bar. */}
+      <div
+        aria-hidden
+        className={cn(
+          "absolute inset-x-0 top-0 -bottom-px -z-10 transition-[background-color] duration-500",
+          scrolled && "bg-bg/85 backdrop-blur-md",
+        )}
+      />
       <div className="container-site flex h-16 items-center justify-between md:h-20">
         <Link href="/" className="flex items-center gap-2.5" aria-label={`${profile.name}, ${profile.title}, home`}>
           <MethaneMark />
