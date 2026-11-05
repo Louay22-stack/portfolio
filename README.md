@@ -38,12 +38,14 @@ The projects pages lead with it, so a new project needs it too.
 
 LouAI, the robot mascot (`components/chat/LouAI.tsx`), is drawn in SVG so it can react to the cursor and
 the conversation. `components/chat/ChatAssistant.tsx` greets visitors and sends questions to `app/api/chat/route.ts`,
-which streams answers from Claude. Its knowledge is built from `content/` by `lib/chat/knowledge.ts`,
+which streams answers through OpenRouter. Its knowledge is built from `content/` by `lib/chat/knowledge.ts`,
 so updating the site content updates the assistant.
 
-It needs `ANTHROPIC_API_KEY` (in `.env.local` locally, and in the Vercel project settings). Without
-a key the site works normally and the assistant shows Louay's email instead. Set a monthly spend
-limit on the Anthropic account: the route's rate limit is per server instance and only best-effort.
+It needs `OPENROUTER_API_KEY` (in `.env.local` locally, and in the Vercel project settings). Without
+a key the site works normally and the assistant shows Louay's email instead. Set a credit limit on
+the OpenRouter key: the route's rate limit is per server instance and only best-effort.
+
+The model defaults to `anthropic/claude-opus-5.5`. Set `OPENROUTER_MODEL` to use another one.
 
 ## Refreshing data and assets from the project folders
 
@@ -69,4 +71,4 @@ the Kaggle certificate. It copies curated figures to `public/` and writes JSON t
 ## Deploy
 
 Vercel works with zero configuration. Set `NEXT_PUBLIC_SITE_URL` to the final domain
-(it is used for canonical URLs, the sitemap and JSON-LD) and `ANTHROPIC_API_KEY` for the assistant.
+(it is used for canonical URLs, the sitemap and JSON-LD) and `OPENROUTER_API_KEY` for the assistant.
