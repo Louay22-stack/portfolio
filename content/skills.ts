@@ -1,5 +1,5 @@
 // Sources: CV "Technical Skills" + tools evidenced in the project folders
-// (AnaeroVision/*.py, BioPredict/*.py|ipynb, pfd/README.md).
+// (AnaeroVision/*.py, BioPredict/*.py|ipynb, pfd/README.md) and the internship reports.
 
 export const expertise = [
   {
@@ -8,8 +8,9 @@ export const expertise = [
       { name: "Anaerobic digestion & biogas", evidence: "AnaeroVision · Mitacs internship" },
       { name: "Inhibition diagnosis (TAN, VFA, LCFA, salinity)", evidence: "AnaeroVision" },
       { name: "Fermentation & SCP production", evidence: "BioPredict · coursework" },
-      { name: "Microalgae cultivation", evidence: "Photobioreactor project" },
+      { name: "Microalgae cultivation", evidence: "Microalgae project" },
       { name: "Reactor-performance assessment", evidence: "CV" },
+      { name: "Good Manufacturing Practice (GMP)", evidence: "ADWYA internship" },
     ],
   },
   {
@@ -20,6 +21,7 @@ export const expertise = [
       { name: "PFD & stream tables (draw.io)", evidence: "Biogas process simulation" },
       { name: "Sensitivity analysis", evidence: "Biogas · BioPredict" },
       { name: "Process & operating-condition optimisation", evidence: "CV · ADWYA internship" },
+      { name: "Time studies & continuous improvement", evidence: "ADWYA internship" },
     ],
   },
   {
@@ -30,6 +32,7 @@ export const expertise = [
       { name: "Hyperparameter & threshold tuning", evidence: "AnaeroVision" },
       { name: "ANN/MLP, Random Forest, XGBoost, SVM", evidence: "AnaeroVision" },
       { name: "Statistical analysis & EDA", evidence: "CV · all projects" },
+      { name: "RNA-Seq analysis", evidence: "Institut Pasteur internship" },
     ],
   },
   {
@@ -38,7 +41,7 @@ export const expertise = [
       { name: "Python, pandas, scikit-learn", evidence: "All projects" },
       { name: "Streamlit decision-support apps", evidence: "AnaeroVision · BioPredict" },
       { name: "R", evidence: "CV" },
-      { name: "Galaxy (bioinformatics), Linux", evidence: "CV" },
+      { name: "Galaxy (bioinformatics), Linux", evidence: "Institut Pasteur internship · CV" },
       { name: "Excel, Word, PowerPoint", evidence: "CV" },
     ],
   },

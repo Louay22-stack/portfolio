@@ -31,7 +31,8 @@ export type VizId =
   | "biogas-sensitivity"
   | "bp-footprint"
   | "bp-strains"
-  | "bp-validation";
+  | "bp-validation"
+  | "ma-growth";
 
 export type Block =
   | { kind: "p"; text: string }
@@ -59,7 +60,10 @@ export type Category =
   | "Biogas"
   | "Process Simulation"
   | "Machine Learning"
-  | "Fermentation";
+  | "Fermentation"
+  | "Microalgae"
+  | "Bioinformatics"
+  | "Pharmaceutical Production";
 
 /**
  * The project explained for a reader with no engineering background.
@@ -73,6 +77,8 @@ export type PlainSummary = {
   type: string;
   oneLine: string;
   problem: string;
+  /** Replaces "What I did" for team work. */
+  didLabel?: string;
   did: string;
   result: string;
   /** Files that substantiate the figures quoted in `result`. */
@@ -98,7 +104,7 @@ export type Project = {
   context: string;
   tools: string[];
   headline: Metric[];
-  cover: { src: string; alt: string; width: number; height: number };
+  cover?: { src: string; alt: string; width: number; height: number };
   coverViz?: VizId;
   repo?: { label: string; href: string };
   sections: Section[];

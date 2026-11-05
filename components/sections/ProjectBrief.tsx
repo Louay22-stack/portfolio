@@ -9,7 +9,7 @@ export function ProjectBrief({
 }: { plain: PlainSummary; withWhy?: boolean; className?: string }) {
   const rows = [
     ["The problem", plain.problem],
-    ["What I did", plain.did],
+    [plain.didLabel ?? "What I did", plain.did],
     ["The result", plain.result],
     ...(withWhy ? [["Why it matters", plain.why]] : []),
   ];

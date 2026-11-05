@@ -19,9 +19,10 @@ Every page reads typed content from `content/`:
 | File | What it holds |
 |---|---|
 | `content/profile.ts` | Identity, links, headline, pillars, languages |
-| `content/experience.ts` | Internships, education, CV-only projects, activities |
+| `content/experience.ts` | Internship timeline, education, activities |
 | `content/skills.ts` | Expertise matrix (with evidence) and credentials |
-| `content/projects/*.ts` | One case study per file: metrics, sections and blocks |
+| `content/projects/*.ts` | One project per file: metrics, sections and blocks |
+| `content/internships/*.ts` | One internship page per file, same format as a project |
 | `content/data/*.json` | Chart data extracted from the project folders |
 
 **Rule:** every quantitative claim carries a `source` path (relative to the `Projects/` folder)
@@ -62,7 +63,7 @@ the Kaggle certificate. It copies curated figures to `public/` and writes JSON t
   optimised setpoints). A static SVG poster (`ReactorPoster`) renders first. The three.js scene
   (`ReactorCanvas`) lazy-loads after idle, only on capable devices (no reduced-motion, more than 4 cores,
   no Save-Data, WebGL available), and pauses when off-screen. On screens ≥ 1280 × 640 the hero is pinned,
-  and scrolling dissolves the reactor into the AnaeroVision dataset (1,500 records: temperature × pH ×
+  and scrolling dissolves the reactor into the AnaeroVision dataset (316 literature and 1,184 generated records: temperature × pH ×
   methane yield, coloured by inhibition status). Data comes from `python scripts/extract-pointcloud.py`.
 - `components/viz/`: hand-built SVG/HTML charts (no chart library).
 - `components/diagrams/InteractivePFD.tsx`: interactive process flow diagram.

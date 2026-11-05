@@ -1,9 +1,9 @@
 import type { Project } from "@/lib/types";
-import { anaerovision } from "./anaerovision";
 import { biogas } from "./biogas-process-simulation";
 import { biopredict } from "./biopredict";
+import { microalgae } from "./microalgae";
 
-export const projects: Project[] = [anaerovision, biogas, biopredict].sort(
+export const projects: Project[] = [biogas, biopredict, microalgae].sort(
   (a, b) => a.order - b.order,
 );
 

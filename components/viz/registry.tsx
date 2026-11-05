@@ -3,6 +3,7 @@ import { InteractivePFD } from "@/components/diagrams/InteractivePFD";
 import { AnaeroPipeline, Task1Models, Task1Scatter, Task2Threshold, Task3Confusion, Task3Importance } from "./anaerovision";
 import { BiogasSensitivity, BiogasValidation } from "./biogas";
 import { BPFootprint, BPStrains, BPValidation } from "./biopredict";
+import { MicroalgaeGrowth } from "./microalgae";
 
 export function Viz({ id }: { id: VizId }) {
   switch (id) {
@@ -18,5 +19,6 @@ export function Viz({ id }: { id: VizId }) {
     case "bp-footprint": return <BPFootprint />;
     case "bp-strains": return <BPStrains />;
     case "bp-validation": return <BPValidation />;
+    case "ma-growth": return <MicroalgaeGrowth />;
   }
 }

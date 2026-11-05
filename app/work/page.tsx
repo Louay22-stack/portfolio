@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { projects } from "@/content/projects";
-import { earlierWork } from "@/content/experience";
 import { Em, IndexLabel, Tag } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProjectBrief } from "@/components/sections/ProjectBrief";
@@ -10,7 +9,7 @@ import { ProjectBrief } from "@/components/sections/ProjectBrief";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Engineering projects by Louay Ouhibi, explained simply: early warnings for biogas plants (AnaeroVision), biogas heat recovery (DWSIM simulation) and choosing protein-producing microbes (BioPredict).",
+    "Engineering projects by Louay Ouhibi, explained simply: biogas heat recovery (DWSIM simulation), choosing protein-producing microbes (BioPredict) and growing microalgae on industrial wastewater.",
   alternates: { canonical: "/work" },
 };
 
@@ -83,43 +82,14 @@ export default function WorkPage() {
         ))}
       </div>
 
-      {/* Everything else */}
-      <section aria-labelledby="other-title" className="mt-28 md:mt-40">
-        <Reveal>
-          <p className="label">Also worth knowing</p>
-          <h2 id="other-title" className="mt-4 text-2xl font-medium tracking-[-0.02em] md:text-3xl">
-            Other project & internships
-          </h2>
-        </Reveal>
-        <div className="mt-10 grid gap-px bg-line md:grid-cols-2">
-          {earlierWork.map((w) => (
-            <Reveal key={w.title} className="bg-bg py-8 md:pr-10">
-              <article>
-                <p className="font-mono text-[0.75rem] text-muted">{w.period} · {w.context}</p>
-                <h3 className="mt-3 text-xl font-medium">{w.title}</h3>
-                <p className="mt-3 text-[0.9375rem] leading-relaxed text-ink/90">{w.plain}</p>
-                <ul className="mt-4 space-y-2 text-[0.875rem] leading-relaxed text-muted">
-                  {w.points.map((pt) => (
-                    <li key={pt}>{pt}</li>
-                  ))}
-                </ul>
-                <div className="mt-5 flex flex-wrap gap-1.5">
-                  {w.tags.map((t) => (
-                    <Tag key={t}>{t}</Tag>
-                  ))}
-                </div>
-              </article>
-            </Reveal>
-          ))}
-          <Reveal className="bg-bg py-8 md:pl-10">
-            <p className="font-mono text-[0.75rem] text-muted">Industrial & research internships</p>
-            <p className="mt-3 text-[0.9375rem] leading-relaxed text-muted">
-              Pharmaceutical production optimisation at ADWYA (2025) and organic-waste vermicomposting at CITET (2024)
-              are described on the <a href="/about#experience" className="text-ink underline decoration-line-strong underline-offset-4 hover:text-accent">About</a> page.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      {/* Pointer to the internships */}
+      <Reveal className="mt-28 border-t border-line-strong pt-8 md:mt-40">
+        <p className="label">Also worth knowing</p>
+        <Link href="/internships" className="group mt-4 inline-flex items-center gap-3 text-2xl font-medium tracking-[-0.02em] hover:text-accent md:text-3xl">
+          See my four internships
+          <ArrowUpRight aria-hidden className="size-6 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </Link>
+      </Reveal>
     </div>
   );
 }

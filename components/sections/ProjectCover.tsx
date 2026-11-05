@@ -2,6 +2,7 @@ import type { Project } from "@/lib/types";
 import { AnaeroPipeline } from "@/components/viz/anaerovision";
 import { PFDCover } from "@/components/diagrams/InteractivePFD";
 import { BPStrains } from "@/components/viz/biopredict";
+import { MicroalgaeGrowth } from "@/components/viz/microalgae";
 
 /** Native, theme-consistent cover visual for each project. */
 export function ProjectCover({ project }: { project: Project }) {
@@ -22,6 +23,12 @@ export function ProjectCover({ project }: { project: Project }) {
       return (
         <div className="flex h-full items-center p-5 md:p-8">
           <BPStrains />
+        </div>
+      );
+    case "microalgae-wastewater":
+      return (
+        <div className="flex h-full items-center p-5 md:p-8">
+          <MicroalgaeGrowth />
         </div>
       );
     default:

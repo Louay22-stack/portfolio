@@ -1,0 +1,6 @@
+[
+  { "id": "Control", "label": "No added nutrient", "rate": 0.652, "finalOd": 0.473 },
+  { "id": "E1", "label": "Nitrogen added", "rate": 0.964, "finalOd": 0.253 },
+  { "id": "E2", "label": "Phosphorus added", "rate": 1.14, "finalOd": 0.455 },
+  { "id": "E3", "label": "Nitrogen and phosphorus added", "rate": 0.861, "finalOd": 0.713 }
+]

@@ -114,7 +114,7 @@ export function HeroVisual({ className }: { className?: string }) {
         className="pointer-events-none absolute inset-x-0 -bottom-2 flex flex-col items-center gap-1.5 text-center font-mono text-[0.625rem] tracking-[0.1em] text-muted uppercase"
         style={{ opacity: "var(--cloud)" }}
       >
-        <span className="text-ink">AnaeroVision dataset · 1,500 digestion records</span>
+        <span className="text-ink">AnaeroVision dataset · 316 literature + 1,184 generated records</span>
         <span className="flex gap-4">
           <span className="inline-flex items-center gap-1.5">
             <span className="size-1.5 rounded-full bg-[#d9a75f]" /> Inhibited · 281

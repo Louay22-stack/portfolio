@@ -4,26 +4,27 @@ const AV = "AnaeroVision";
 const T1 = `${AV}/TASK1-Methane yield regression`;
 const T2 = `${AV}/TASK2-Binary inhibtion classification`;
 const T3 = `${AV}/TASK3-Inhibition type classification`;
+const MS = `${AV}/2026-10-29_Manuscript_-_NS3_edited (1) (1).docx`;
 const fig = "/projects/anaerovision";
 
 export const anaerovision: Project = {
   slug: "anaerovision",
-  order: 1,
+  order: 0,
   title: "AnaeroVision",
   shortTitle: "AnaeroVision",
   kicker: "Anaerobic digestion · Machine learning",
   tagline: "AI decision support for anaerobic digestion: methane yield, inhibition risk and inhibition pathway from operating conditions.",
   summary:
-    "A three-stage machine-learning framework, built during a Mitacs Globalink research internship, that estimates methane yield, screens for process inhibition and diagnoses the probable inhibition mechanism, packaged as one interface for early process diagnosis.",
+    "A three-stage machine-learning framework, built during my end-of-study Mitacs Globalink research internship, that estimates methane yield, screens for process inhibition and diagnoses the probable inhibition mechanism, packaged as one interface for early process diagnosis.",
   plain: {
     goal: "Keep biogas plants healthy",
-    type: "Research internship · Canada",
+    type: "End-of-study internship · Canada",
     oneLine: "A tool that warns biogas plant operators when their process is heading for trouble, and suggests why.",
     problem:
       "Biogas plants rely on microbes that turn organic waste into methane, a renewable fuel. When those microbes are stressed, gas production can collapse, and the warning signs often come too late.",
-    did: "I gathered 1,500 experiments from scientific papers into one database, trained three machine-learning models on it, and combined them in a single app.",
+    did: "I worked on a database of 316 experiments from scientific papers, expanded to 1,500 records with generated data to make up for how little is published. I then trained three machine-learning models on it and combined them in a single app.",
     result:
-      "From a plant's operating conditions, the app estimates gas output (R² of 0.91 on test data), flags risk with 91.2% accuracy on waste types it had never seen, and identifies the likely cause with 92.7% accuracy.",
+      "From a plant's operating conditions, the app estimates gas output (R² of 0.91 on test data), flags risk with 91.2% accuracy on waste types it had never seen, and identifies the likely cause with 92.7% accuracy. These scores come from the expanded dataset, so they still have to be confirmed on new plant data.",
     resultSource: `${T1}/final_task1_methane_yield_model/ann_tuned_metrics.json · ${T2}/final_task2_inhibition_risk_model/task2_final_model_summary.json · ${T3}/final_task3_inhibition_type_model/task3_final_model_summary.json`,
     why: "Operators get an early first opinion before a problem becomes expensive. It supports measurements and engineering judgement; it does not replace them.",
     glossary: [
@@ -51,14 +52,14 @@ export const anaerovision: Project = {
   categories: ["Biogas", "Machine Learning"],
   period: "May – August 2026",
   role: "Research intern: dataset, modelling, interface",
-  context: "Mitacs Globalink · Memorial University of Newfoundland, Canada",
+  context: "End-of-study internship (INSAT) · Mitacs Globalink · Memorial University of Newfoundland, Canada",
   tools: ["Python", "pandas", "scikit-learn", "XGBoost", "MLP / ANN", "Streamlit"],
   headline: [
     {
-      value: "1,500",
-      label: "AD records compiled",
-      detail: "Literature-derived, each traceable to a reference/DOI",
-      source: `${AV}/DATASET/Operational-dataset.xlsx`,
+      value: "316",
+      label: "Records from the literature",
+      detail: "Expanded to 1,500 with 1,184 generated records",
+      source: `${MS} §2.1.2, §2.3`,
     },
     {
       value: "0.91",
@@ -128,7 +129,7 @@ export const anaerovision: Project = {
       blocks: [
         {
           kind: "p",
-          text: "The operational dataset holds 1,500 digestion records with 22 fields. Each record keeps its bibliographic reference and DOI, so every data point can be traced back to its source. Nine process variables serve as model inputs:",
+          text: "The dataset started with 500 records: 316 extracted by hand from published studies, and 184 generated to compensate for the scarcity of published data. After quality control, a Gaussian Copula model added 1,000 synthetic records that preserve the statistical structure of the data, for a modelling dataset of 1,500 records. The generated records are a modelling resource, not new experimental evidence. Nine process variables serve as model inputs:",
         },
         {
           kind: "table",
@@ -241,6 +242,7 @@ export const anaerovision: Project = {
         {
           kind: "list",
           items: [
+            "Only 316 of the 1,500 modelling records come directly from the literature. The scores describe how well the models capture patterns in this expanded dataset, so external validation on independent experimental data is the key next step.",
             "Literature data is heterogeneous: measurement methods, reporting conventions and missing TAN/VFA values (imputed) vary between studies.",
             "The methane-yield model was validated with a random split, so substrates in the test set may also appear in training. Performance on entirely new feedstocks is likely lower, and a substrate-grouped evaluation, as done for Task 2, is the natural next step.",
             "The inhibition-type model is trained on 220 labelled cases and only knows five mechanism classes. Unusual upsets fall back to the 'uncertain' answer by design.",
@@ -256,6 +258,10 @@ export const anaerovision: Project = {
         {
           kind: "p",
           text: "AnaeroVision turns a scattered body of published digestion experiments into a structured, reusable asset and a fast first opinion on yield and stability. For a biogas operator or designer, that means screening feedstocks and operating windows before committing reactor time, and having an early, explainable signal pointing at the most likely inhibition pathway.",
+        },
+        {
+          kind: "p",
+          text: "This work is also written up in a research manuscript that I co-authored, currently under review.",
         },
         {
           kind: "callout",
@@ -275,6 +281,9 @@ export const anaerovision: Project = {
             { src: `${fig}/boxplot-methane-yield.png`, width: 4029, height: 4029, alt: "Boxplot of methane yield in mL CH4 per g VS", caption: "Methane-yield distribution and IQR outliers", source: `${AV}/Exploratory Data Analysis/EDA outputs/Boxplots/boxplot_Methane_Yield_mL_CH4_gVS.png` },
             { src: `${fig}/task1-ann-predicted-vs-actual.png`, width: 2100, height: 2100, alt: "Predicted versus actual methane yield for the tuned ANN", caption: "Task 1: tuned ANN, predicted vs actual", source: `${T1}/task1_ann_tuning_outputs/ann_tuned_predicted_vs_actual.png` },
             { src: `${fig}/task1-ann-residuals.png`, width: 2400, height: 1800, alt: "Residuals versus predicted methane yield for the tuned ANN", caption: "Task 1: residual analysis", source: `${T1}/task1_ann_tuning_outputs/ann_tuned_residuals_vs_predicted.png` },
+            { src: `${fig}/interface-home.png`, width: 1619, height: 889, alt: "AnaeroVision landing page showing the three-model workflow", caption: "AnaeroVision: landing page", source: `${MS} Fig. S2` },
+            { src: `${fig}/interface-input.png`, width: 1587, height: 874, alt: "AnaeroVision form grouping the operating and stability inputs", caption: "AnaeroVision: entering the reactor state", source: `${MS} Fig. S3` },
+            { src: `${fig}/interface-result.png`, width: 1561, height: 885, alt: "AnaeroVision result screen showing predicted methane yield, inhibition probability and likely mechanism", caption: "AnaeroVision: example result", source: `${MS} Fig. S4` },
             { src: `${fig}/task2-f1-comparison.png`, width: 2700, height: 1500, alt: "Bar chart comparing threshold-tuned F1 scores of five classifiers", caption: "Task 2: threshold-tuned F1 by model (group split)", source: `${T2}/task2_group_split_threshold_tuning_outputs/threshold_tuned_f1_comparison.png` },
             { src: `${fig}/task3-class-distribution.png`, width: 3000, height: 1800, alt: "Distribution of inhibition-type classes after label cleaning and merging", caption: "Task 3: inhibition-type classes after label cleaning", source: `${T3}/task3_cleaned_inhibition_type_outputs/final_merged_inhibition_type_distribution.png` },
             { src: `${fig}/task3-confidence-tradeoff.png`, width: 5965, height: 3867, alt: "Trade-off between confidence threshold, coverage and accuracy for the inhibition-type model", caption: "Task 3: confidence-threshold trade-off", source: `${T3}/task3c_rf_confidence_threshold_outputs/confidence_threshold_tradeoff.png` },
