@@ -61,6 +61,28 @@ export type Category =
   | "Machine Learning"
   | "Fermentation";
 
+/**
+ * The project explained for a reader with no engineering background.
+ * Every project answers the same questions in the same order, so readers
+ * can compare them without learning the vocabulary first.
+ */
+export type PlainSummary = {
+  /** Short goal, used to show how the projects connect. */
+  goal: string;
+  /** What kind of work this was. */
+  type: string;
+  oneLine: string;
+  problem: string;
+  did: string;
+  result: string;
+  /** Files that substantiate the figures quoted in `result`. */
+  resultSource: string;
+  why: string;
+  glossary: { term: string; meaning: string }[];
+  /** One sentence shown above each technical section, keyed by section id. */
+  guide: Record<string, string>;
+};
+
 export type Project = {
   slug: string;
   order: number;
@@ -69,6 +91,7 @@ export type Project = {
   kicker: string;
   tagline: string;
   summary: string;
+  plain: PlainSummary;
   categories: Category[];
   period: string;
   role: string;

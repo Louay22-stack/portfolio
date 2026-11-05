@@ -4,6 +4,7 @@ import "./globals.css";
 import { TopNav } from "@/components/layout/TopNav";
 import { SideRail } from "@/components/layout/SideRail";
 import { Footer } from "@/components/layout/Footer";
+import { ChatAssistant } from "@/components/chat/ChatAssistant";
 import { profile, siteUrl } from "@/content/profile";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -104,6 +105,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <main id="main">{children}</main>
           <Footer />
         </div>
+        <ChatAssistant />
       </body>
     </html>
   );

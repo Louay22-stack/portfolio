@@ -173,3 +173,56 @@ body {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(260%); }
 }
+
+/* ─── LouAI, the chat mascot ──────────────────────────────────── */
+@keyframes louai-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes louai-shadow {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(0.86); }
+}
+@keyframes louai-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(14deg); }
+}
+@keyframes louai-wave {
+  0%, 100% { transform: rotate(105deg); }
+  50% { transform: rotate(140deg); }
+}
+@keyframes louai-pulse {
+  50% { opacity: 0.35; }
+}
+@keyframes louai-talk {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.35); }
+}
+.louai-bob { animation: louai-bob 3.2s ease-in-out infinite; }
+.louai-shadow {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: louai-shadow 3.2s ease-in-out infinite;
+}
+.louai-float {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: louai-float 5s ease-in-out infinite;
+}
+.louai-wave {
+  transform-box: fill-box;
+  transform-origin: 100% 0%;
+  animation: louai-wave 0.7s ease-in-out infinite;
+}
+.louai-pulse { animation: louai-pulse 0.8s ease-in-out infinite; }
+.louai-talk {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: louai-talk 0.32s ease-in-out infinite;
+}
+.louai-head {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  transition: transform 0.25s var(--ease-out-soft);
+}
+.louai-eyes { transition: transform 0.15s var(--ease-out-soft); }

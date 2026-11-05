@@ -5,12 +5,6 @@ import { Button } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
 import { HeroVisual } from "./HeroVisual";
 
-const band = [
-  { value: "1,500", label: "Anaerobic-digestion records compiled & modelled", href: "/work/anaerovision" },
-  { value: "92.7%", label: "Out-of-fold accuracy diagnosing inhibition type", href: "/work/anaerovision" },
-  { value: "544.2 kW", label: "Energy balance closed against a ≈544 kW hand calc", href: "/work/biogas-process-simulation" },
-];
-
 export function Hero() {
   return (
     <section aria-labelledby="hero-title" className="hero-pin relative">
@@ -66,33 +60,11 @@ export function Hero() {
             <p className="mt-6 max-w-md text-[0.9375rem] leading-relaxed text-muted">{profile.statement}</p>
           </Reveal>
           <Reveal delay={0.24} className="mt-8 flex flex-wrap gap-3">
-            <Button href="/work">View work</Button>
+            <Button href="/work">View projects</Button>
             <Button href={profile.cv} variant="ghost" download>
               Download CV
             </Button>
           </Reveal>
-        </div>
-      </div>
-
-      {/* Bottom band: verified figures */}
-      <div className="border-t border-line bg-bg-elev/60">
-        <div className="container-site grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
-          <div className="border-line py-6 sm:col-span-2 xl:col-span-1 xl:border-r xl:pr-8">
-            <p className="label">Latest</p>
-            <p className="mt-3 text-[0.9375rem] font-medium">Mitacs Globalink Research Intern, 2026</p>
-            <p className="mt-1 text-[0.8125rem] text-muted">Memorial University of Newfoundland, Canada</p>
-          </div>
-          {band.map((b, i) => (
-            <Link
-              key={b.value}
-              href={b.href}
-              className="group border-t border-line py-6 transition-colors sm:border-t-0 xl:px-8 [&:not(:last-child)]:xl:border-r"
-            >
-              <p className="label">{String(i + 1).padStart(2, "0")} · Verified</p>
-              <p className="mt-3 font-mono text-2xl tracking-tight text-ink transition-colors group-hover:text-accent">{b.value}</p>
-              <p className="mt-1 text-[0.8125rem] text-muted">{b.label}</p>
-            </Link>
-          ))}
         </div>
       </div>
       </div>

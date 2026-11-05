@@ -13,11 +13,11 @@ export function FeaturedWork() {
         <Reveal className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <SectionHeading
             index="04"
-            label="Selected work"
+            label="Projects"
             id="work-title"
             heading={
               <>
-                Case studies from the digester, the flowsheet <Em>and the dataset.</Em>
+                Three engineering projects, <Em>explained simply.</Em>
               </>
             }
           />
@@ -33,7 +33,7 @@ export function FeaturedWork() {
                 <Reveal className={cn("xl:col-span-7", i % 2 === 1 && "xl:order-2")}>
                   <Link
                     href={`/work/${p.slug}`}
-                    aria-label={`${p.shortTitle} case study`}
+                    aria-label={`${p.shortTitle} project`}
                     className="group corners block border border-line bg-bg-deep/60 transition-colors duration-500 hover:border-line-strong"
                   >
                     <div className="flex items-center justify-between border-b border-line px-5 py-3">
@@ -48,31 +48,31 @@ export function FeaturedWork() {
 
                 <Reveal delay={0.1} className={cn("xl:col-span-5", i % 2 === 1 && "xl:order-1")}>
                   <p className="font-mono text-sm text-accent">0{i + 1}</p>
-                  <p className="label mt-4">{p.kicker}</p>
+                  <p className="label mt-4">{p.plain.goal}</p>
                   <h3 className="mt-4 text-3xl font-medium tracking-[-0.02em] md:text-4xl">
                     <Link href={`/work/${p.slug}`} className="hover:text-accent">
                       {p.shortTitle}
                     </Link>
                   </h3>
-                  <p className="mt-5 text-[0.9375rem] leading-relaxed text-muted">{p.tagline}</p>
-                  <dl className="mt-8 grid grid-cols-2 gap-px bg-line">
-                    {p.headline.slice(0, 4).map((m) => (
-                      <div key={m.label} className="bg-bg py-4 pr-4">
-                        <dt className="text-[0.75rem] text-muted">{m.label}</dt>
-                        <dd className="mt-1 font-mono text-xl text-ink">{m.value}</dd>
-                      </div>
-                    ))}
+                  <p className="mt-5 text-lg leading-snug text-ink">{p.plain.oneLine}</p>
+                  <dl className="mt-6 space-y-4 border-t border-line pt-5">
+                    <div>
+                      <dt className="label text-accent">The problem</dt>
+                      <dd className="mt-1.5 text-[0.9375rem] leading-relaxed text-muted">{p.plain.problem}</dd>
+                    </div>
+                    <div>
+                      <dt className="label text-accent">The result</dt>
+                      <dd className="mt-1.5 text-[0.9375rem] leading-relaxed text-muted">{p.plain.result}</dd>
+                    </div>
                   </dl>
-                  <div className="mt-8 flex flex-wrap gap-2">
-                    {p.categories.map((c) => (
-                      <Tag key={c}>{c}</Tag>
-                    ))}
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    <Tag>{p.plain.type}</Tag>
                   </div>
                   <Link
                     href={`/work/${p.slug}`}
-                    className="group mt-10 inline-flex items-center gap-3 border-b border-line-strong pb-2 text-sm transition-colors hover:border-accent hover:text-accent"
+                    className="group mt-8 inline-flex items-center gap-3 border-b border-line-strong pb-2 text-sm transition-colors hover:border-accent hover:text-accent"
                   >
-                    Read the case study
+                    See the full project
                     <ArrowUpRight aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                 </Reveal>

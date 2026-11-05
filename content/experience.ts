@@ -78,6 +78,7 @@ export const earlierWork = [
     period: "May 2025",
     title: "Microalgae Cultivation in a Photobioreactor for Wastewater Treatment",
     context: "Independent engineering project, INSAT",
+    plain: "Growing microalgae on industrial wastewater to help clean it, and predicting how well they grow.",
     points: [
       "Studied the cultivation of Chlorella sp. in a photobioreactor using industrial wastewater, evaluating the influence of nutrients, temperature, pH, light and aeration on biomass growth.",
       "Developed a predictive model for microalgae growth from environmental and operating parameters (R² = 0.9607, as reported on CV).",

@@ -1,6 +1,7 @@
 # Louay Ouhibi: Engineering Portfolio
 
-Monolithic Next.js 16 (App Router) site. Fully static, with no backend, database or CMS.
+Monolithic Next.js 16 (App Router) site. All pages are static, with no database or CMS. The only
+server code is the chat route, `app/api/chat/route.ts`.
 
 ## Run
 
@@ -29,6 +30,21 @@ pointing to the file that substantiates it. The source is shown in small print u
 To add a case study, create `content/projects/<slug>.ts` exporting a `Project`
 (see `lib/types.ts`) and register it in `content/projects/index.ts`.
 
+Every project also has a `plain` field, written for readers with no engineering background: the
+goal, problem, what was done, result, why it matters, a glossary and one sentence per section.
+The projects pages lead with it, so a new project needs it too.
+
+## AI assistant
+
+LouAI, the robot mascot (`components/chat/LouAI.tsx`), is drawn in SVG so it can react to the cursor and
+the conversation. `components/chat/ChatAssistant.tsx` greets visitors and sends questions to `app/api/chat/route.ts`,
+which streams answers from Claude. Its knowledge is built from `content/` by `lib/chat/knowledge.ts`,
+so updating the site content updates the assistant.
+
+It needs `ANTHROPIC_API_KEY` (in `.env.local` locally, and in the Vercel project settings). Without
+a key the site works normally and the assistant shows Louay's email instead. Set a monthly spend
+limit on the Anthropic account: the route's rate limit is per server instance and only best-effort.
+
 ## Refreshing data and assets from the project folders
 
 ```bash
@@ -53,4 +69,4 @@ the Kaggle certificate. It copies curated figures to `public/` and writes JSON t
 ## Deploy
 
 Vercel works with zero configuration. Set `NEXT_PUBLIC_SITE_URL` to the final domain
-(it is used for canonical URLs, the sitemap and JSON-LD).
+(it is used for canonical URLs, the sitemap and JSON-LD) and `ANTHROPIC_API_KEY` for the assistant.
