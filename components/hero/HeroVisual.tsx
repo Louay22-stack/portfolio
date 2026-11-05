@@ -72,6 +72,8 @@ export function HeroVisual({ className }: { className?: string }) {
     };
 
     apply();
+    // Pinning adds height after the browser has scrolled to a hash, so go to it again.
+    if (mq.matches && location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
     mq.addEventListener("change", apply);
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);

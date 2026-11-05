@@ -7,11 +7,15 @@ import { Download, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/cn";
 import { profile } from "@/content/profile";
+import { MethaneMark } from "./MethaneMark";
 import { navLinks } from "./nav";
 
-function isActive(pathname: string, href: string) {
-  if (href === "/") return pathname === "/";
-  if (href.startsWith("/#")) return false;
+// Contact counts as in view once it reaches the area between the bar and 65% of the viewport.
+const CONTACT_BAND = "-80px 0px -35% 0px";
+
+function isActive(pathname: string, href: string, contactInView: boolean) {
+  if (href === "/") return pathname === "/" && !contactInView;
+  if (href.startsWith("/#")) return pathname === "/" && contactInView;
   return pathname === href || pathname.startsWith(href + "/");
 }
 
@@ -19,6 +23,7 @@ export function TopNav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [contactInView, setContactInView] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -34,6 +39,21 @@ export function TopNav() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
+  useEffect(() => {
+    if (pathname !== "/") return;
+    const contact = document.getElementById("contact");
+    if (!contact) return;
+    const observer = new IntersectionObserver(
+      (entries) => setContactInView(entries[entries.length - 1].isIntersecting),
+      { rootMargin: CONTACT_BAND },
+    );
+    observer.observe(contact);
+    return () => {
+      observer.disconnect();
+      setContactInView(false);
+    };
+  }, [pathname]);
+
   return (
     <header
       className={cn(
@@ -42,21 +62,27 @@ export function TopNav() {
       )}
     >
       <div className="container-site flex h-16 items-center justify-between md:h-20">
-        <Link href="/" className="text-[1.0625rem] font-medium tracking-[-0.01em]" aria-label="Louay Ouhibi, home">
-          Louay Ouhibi<span className="text-accent">.</span>
+        <Link href="/" className="flex items-center gap-2.5" aria-label={`${profile.name}, ${profile.title}, home`}>
+          <MethaneMark />
+          <span className="flex flex-col whitespace-nowrap">
+            <span className="text-[1.0625rem] leading-tight font-semibold tracking-[-0.01em]">
+              {profile.name}<span className="text-accent">.</span>
+            </span>
+            <span className="font-mono text-[11px] leading-tight text-muted">{profile.title}</span>
+          </span>
         </Link>
 
         <nav aria-label="Primary" className="hidden md:block">
-          <ul className="flex items-center gap-10">
+          <ul className="flex items-center gap-3.5 lg:gap-10">
             {navLinks.map((l) => {
-              const active = isActive(pathname, l.href);
+              const active = isActive(pathname, l.href, contactInView);
               return (
                 <li key={l.href}>
                   <Link
                     href={l.href}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "relative py-2 text-sm transition-colors hover:text-ink",
+                      "relative py-2 text-[15px] leading-5 transition-colors hover:text-ink",
                       active ? "text-ink" : "text-muted",
                     )}
                   >
