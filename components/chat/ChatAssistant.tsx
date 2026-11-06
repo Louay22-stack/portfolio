@@ -183,7 +183,7 @@ export function ChatAssistant() {
               className="relative mr-2 flex max-w-[17rem] items-start gap-2 border border-line-strong bg-bg-elev py-3 pr-2 pl-4 shadow-xl"
             >
               <button type="button" onClick={openChat} className="text-left">
-                <span className="label block text-accent">LouAI</span>
+                <span className="label block text-accent normal-case">LouAI</span>
                 <span className="mt-1 block text-[0.9375rem] leading-snug text-ink">{GREETING}</span>
               </button>
               <button
@@ -267,7 +267,7 @@ export function ChatAssistant() {
                     {m.role === "assistant" ? withLinks(m.content) : m.content}
                   </Bubble>
                 ) : (
-                  <p key={i} className="label animate-pulse">
+                  <p key={i} className="label animate-pulse normal-case">
                     LouAI is thinking
                   </p>
                 ),
