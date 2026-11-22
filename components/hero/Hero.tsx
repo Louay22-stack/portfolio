@@ -19,6 +19,7 @@ export function Hero() {
           <p className="mt-5 text-base font-medium">Engineering Portfolio</p>
           <ul className="mt-3 space-y-1.5 text-[0.8125rem] text-muted">
             <li><Link className="hover:text-ink" href="/internships/anaerovision">Biogas &amp; anaerobic digestion</Link></li>
+            <li><Link className="hover:text-ink" href="/work/methatwin">Digital twin &amp; biomethane</Link></li>
             <li><Link className="hover:text-ink" href="/work/biogas-process-simulation">Process simulation</Link></li>
             <li><Link className="hover:text-ink" href="/work/biopredict">Fermentation &amp; ML</Link></li>
           </ul>

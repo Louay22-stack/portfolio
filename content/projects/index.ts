@@ -2,8 +2,9 @@ import type { Project } from "@/lib/types";
 import { biogas } from "./biogas-process-simulation";
 import { biopredict } from "./biopredict";
 import { microalgae } from "./microalgae";
+import { methatwin } from "./methatwin";
 
-export const projects: Project[] = [biogas, biopredict, microalgae].sort(
+export const projects: Project[] = [methatwin, biogas, biopredict, microalgae].sort(
   (a, b) => a.order - b.order,
 );
 

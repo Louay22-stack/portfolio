@@ -17,7 +17,7 @@ export function FeaturedWork() {
             id="work-title"
             heading={
               <>
-                Three engineering projects, <Em>explained simply.</Em>
+                Four engineering projects, <Em>explained simply.</Em>
               </>
             }
           />

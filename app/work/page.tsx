@@ -9,7 +9,7 @@ import { ProjectBrief } from "@/components/sections/ProjectBrief";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Engineering projects by Louay Ouhibi, explained simply: biogas heat recovery (DWSIM simulation), choosing protein-producing microbes (BioPredict) and growing microalgae on industrial wastewater.",
+    "Engineering projects by Louay Ouhibi, explained simply: a digital twin of a biomethane plant (MethaTwin), biogas heat recovery (DWSIM simulation), choosing protein-producing microbes (BioPredict) and growing microalgae on industrial wastewater.",
   alternates: { canonical: "/work" },
 };
 
@@ -19,7 +19,7 @@ export default function WorkPage() {
       <Reveal>
         <IndexLabel index="04">Projects</IndexLabel>
         <h1 className="mt-8 max-w-4xl text-[2.5rem] leading-[1.02] font-medium tracking-[-0.03em] text-balance md:text-7xl">
-          Three engineering projects, <Em>explained simply.</Em>
+          Four engineering projects, <Em>explained simply.</Em>
         </h1>
         <p className="mt-8 max-w-2xl text-[1.0625rem] leading-relaxed text-muted">
           I use biology, process engineering and data to make industrial processes more predictable, such as turning
@@ -34,7 +34,7 @@ export default function WorkPage() {
           <p id="overview-title" className="label">
             At a glance
           </p>
-          <ol className="mt-4 grid gap-px border border-line bg-line md:grid-cols-3">
+          <ol className="mt-4 grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-4">
             {projects.map((p, i) => (
               <li key={p.slug} className="bg-bg">
                 <a href={`#${p.slug}`} className="group flex h-full flex-col p-5 transition-colors hover:bg-bg-elev/60 md:p-6">
