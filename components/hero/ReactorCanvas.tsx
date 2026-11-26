@@ -3,7 +3,6 @@
 import { Canvas, useFrame, type RootState } from "@react-three/fiber";
 import { useEffect, useRef, useState, type RefObject } from "react";
 import * as THREE from "three";
-import cloudData from "@/content/data/av-pointcloud.json";
 import { CLOUD, NET, RX, probeTop, vesselProfile } from "./reactorGeometry";
 
 /* ───────────────────────── palette ───────────────────────── */
@@ -350,9 +349,33 @@ function samplePoints(n: number) {
   return start;
 }
 
+/**
+ * Illustrative operating points (temperature, pH, methane yield, inhibited),
+ * generated in the browser. Not project data: the AnaeroVision dataset stays
+ * private while its manuscript is under review.
+ */
+function illustrativePoints(n: number): number[][] {
+  const r = mulberry32(7);
+  const gauss = () => {
+    const u = Math.max(r(), 1e-6), v = r();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  };
+  const temps = [35, 37, 55];
+  const pts: number[][] = [];
+  for (let i = 0; i < n; i++) {
+    const t = temps[Math.floor(r() * temps.length)] + gauss() * 1.5;
+    const ph = 7.2 + gauss() * 0.35;
+    const stress = Math.abs(ph - 7.2) * 1.6 + (t > 45 ? 0.25 : 0) + r() * 0.5;
+    const inhibited = stress > 1.1 ? 1 : 0;
+    const y = Math.max(40, 420 + gauss() * 95 - inhibited * 170 + (t > 45 ? 30 : 0));
+    pts.push([t, ph, y, inhibited]);
+  }
+  return pts;
+}
+
 function buildCloud() {
   {
-    const pts = cloudData.points as number[][];
+    const pts = illustrativePoints(1500);
     const n = pts.length;
     const T = pts.map((p) => p[0]), PH = pts.map((p) => p[1]), Y = pts.map((p) => p[2]);
     const rng = (v: number[]) => [Math.min(...v), Math.max(...v)] as const;

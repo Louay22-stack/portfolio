@@ -63,8 +63,8 @@ the Kaggle certificate. It copies curated figures to `public/` and writes JSON t
   optimised setpoints). A static SVG poster (`ReactorPoster`) renders first. The three.js scene
   (`ReactorCanvas`) lazy-loads after idle, only on capable devices (no reduced-motion, more than 4 cores,
   no Save-Data, WebGL available), and pauses when off-screen. On screens ≥ 1280 × 640 the hero is pinned,
-  and scrolling dissolves the reactor into the AnaeroVision dataset (316 literature and 1,184 generated records: temperature × pH ×
-  methane yield, coloured by inhibition status). Data comes from `python scripts/extract-pointcloud.py`.
+  and scrolling dissolves the reactor into an illustrative point cloud (generated in the browser: temperature × pH ×
+  methane yield, coloured by inhibition status). It is not project data.
 - `components/viz/`: hand-built SVG/HTML charts (no chart library).
 - `components/diagrams/InteractivePFD.tsx`: interactive process flow diagram.
 - `components/case/`: case-study blocks, sticky section nav, figure gallery and lightbox.

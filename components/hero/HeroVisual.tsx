@@ -29,7 +29,7 @@ const MORPH_MQ = "(min-width: 80rem) and (min-height: 640px)";
 /**
  * Poster first (LCP). On capable devices the WebGL bioreactor fades in; on
  * wide screens the hero is pinned and scrolling dissolves the reactor into
- * the AnaeroVision dataset.
+ * an illustrative cloud of operating points.
  */
 export function HeroVisual({ className }: { className?: string }) {
   const [enabled, setEnabled] = useState(false);
@@ -116,13 +116,13 @@ export function HeroVisual({ className }: { className?: string }) {
         className="pointer-events-none absolute inset-x-0 -bottom-2 flex flex-col items-center gap-1.5 text-center font-mono text-[0.625rem] tracking-[0.1em] text-muted uppercase"
         style={{ opacity: "var(--cloud)" }}
       >
-        <span className="text-ink">AnaeroVision dataset · 316 literature + 1,184 generated records</span>
+        <span className="text-ink">Illustration · operating conditions vs methane yield</span>
         <span className="flex gap-4">
           <span className="inline-flex items-center gap-1.5">
-            <span className="size-1.5 rounded-full bg-[#d9a75f]" /> Inhibited · 281
+            <span className="size-1.5 rounded-full bg-[#d9a75f]" /> Inhibited
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <span className="size-1.5 rounded-full bg-signal" /> Stable · 1,219
+            <span className="size-1.5 rounded-full bg-signal" /> Stable
           </span>
         </span>
       </div>
