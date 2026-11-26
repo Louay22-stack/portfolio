@@ -21,11 +21,6 @@ export type Figure = {
 
 export type VizId =
   | "av-pipeline"
-  | "av-task1-models"
-  | "av-task1-scatter"
-  | "av-task2-threshold"
-  | "av-task3-confusion"
-  | "av-task3-importance"
   | "biogas-pfd"
   | "biogas-validation"
   | "biogas-sensitivity"
