@@ -87,7 +87,6 @@ export const anaerovision: Project = {
     height: 2100,
   },
   coverViz: "av-pipeline",
-  repo: { label: "GitHub: Louay22-stack/AnaeroVision", href: "https://github.com/Louay22-stack/AnaeroVision" },
   sections: [
     {
       id: "context",
